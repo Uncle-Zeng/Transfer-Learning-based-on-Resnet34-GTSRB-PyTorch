@@ -1,6 +1,6 @@
 import argparse
 
-# 使用python内置的argparse来进行参数设置，也方便调参
+# 使用python内置的argparse来进行参数设置，也方便调参.
 # 使用ArgumentParser对象进行初始化
 parser = argparse.ArgumentParser()
 
