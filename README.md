@@ -19,4 +19,9 @@
 
 > `utils.py`：常用函数的方法合集。
 
+运行方法：
+1、修改configs参数，运行train_fc.py；
 
+2、修改configs参数，运行fine_tune.py；
+
+3、修改configs参数，选择最好的模型，运行test.py；
