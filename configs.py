@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--num_classes', type=int, default=43,
                     help='迁移学习时最终的全连接层神经元个数（输出个数）')
-parser.add_argument('--resize_size', type=int, default=256, 
+parser.add_argument('--resize_size', type=int, default=256,
                     help='先进行resize，然后进行中心裁剪，去除部分背景')
 parser.add_argument('--input_size', type=int, default=224,
                     help='输入模型的数据尺寸')
@@ -28,11 +28,8 @@ parser.add_argument('--step_size', type=int, default=1,
 parser.add_argument('--gamma', type=float, default=0.8,
                     help='学习率衰减系数')
 
-
-
 parser.add_argument('--tolerance', type=int, default=5,
                     help='用于早停的容忍度值')
-
 
 # 路径相关
 parser.add_argument('--train_path', type=str, default='../GTSRB/Train_backup',
@@ -48,8 +45,7 @@ parser.add_argument('--train_label_path', type=str, default='../GTSRB/Train.csv'
 parser.add_argument('--test_label_path', type=str, default='../GTSRB/Test.csv',
                     help='测试集的标签数据csv文件路径')
 
-
-parser.add_argument('--model_structure_path', type=str, default="model_structure/resnet34_model.pth", 
+parser.add_argument('--model_structure_path', type=str, default="model_structure/resnet34_model.pth",
                     help='模型结构的保存位置')
 
 parser.add_argument('--model_path', type=str,
