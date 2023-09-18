@@ -1,61 +1,11 @@
 import warnings
 
 import cv2
-import torch
-import numpy as np
 import pandas as pd
 import torch.nn.functional as F
-import torchvision
 from torchvision import transforms
 
 from utils import *
-
-from collections import OrderedDict
-
-classes_id = {0: 0,
-              1: 1,
-              12: 2,
-              23: 3,
-              34: 4,
-              38: 5,
-              39: 6,
-              40: 7,
-              41: 8,
-              42: 9,
-              2: 10,
-              3: 11,
-              4: 12,
-              5: 13,
-              6: 14,
-              7: 15,
-              8: 16,
-              9: 17,
-              10: 18,
-              11: 19,
-              13: 20,
-              14: 21,
-              15: 22,
-              16: 23,
-              17: 24,
-              18: 25,
-              19: 26,
-              20: 27,
-              21: 28,
-              22: 29,
-              24: 30,
-              25: 31,
-              26: 32,
-              27: 33,
-              28: 34,
-              29: 35,
-              30: 36,
-              31: 37,
-              32: 38,
-              33: 39,
-              35: 40,
-              36: 41,
-              37: 42}
-
 
 # 忽略特定类型的警告
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -79,13 +29,12 @@ else:
     resnet_model.load_state_dict(torch.load(args.model_param_path))
     print("CPU加载模型")
 
-
 # 使用双卡
 if torch.cuda.device_count() > 1:
     print("Let's use", torch.cuda.device_count(), "GPUs!")
     resnet_model = nn.DataParallel(resnet_model)
     resnet_model.to(device)
-    
+
 # 将模型切换到评估模式进行预测
 resnet_model.eval()
 
@@ -97,6 +46,7 @@ transform = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize(mean=[0.3402, 0.3121, 0.3214],
                                                      std=[0.1681, 0.1683, 0.1785])
                                 ])
+
 
 def model(input):
     """
