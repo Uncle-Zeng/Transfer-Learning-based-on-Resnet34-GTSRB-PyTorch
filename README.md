@@ -1,5 +1,5 @@
 # Transfer-Learning-based-on-Resnet34-GTSRB-PyTorch
-简介：用Resnet34模型框架 + GTSRB数据集进行迁移学习（第一次手动训练）
+简介：用Resnet34模型框架 + GTSRB数据集进行迁移学习（第一次手动训练），最终在测试集上获得了`97.83%`的准确率。
 ## 文件说明：
 > `checkpoints`：训练过程中保存的效果较好的模型文件，train_info.txt是训练过程中的部分参数信息、损失值、准确率记录。
 
